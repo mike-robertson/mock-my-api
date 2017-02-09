@@ -1,6 +1,6 @@
 {
   "name": "mock-my-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An open source API mocking utility",
   "main": "lib/index.js",
   "scripts": {

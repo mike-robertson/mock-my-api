@@ -27,4 +27,6 @@ myMock.init({
     },
   ],
 });
+
+myMock.start(3000); // Port number goes here. Defaults to 3001.
 ```

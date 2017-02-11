@@ -15,10 +15,25 @@ myMock.init({
       method: 'GET',
     }, {
       path: '/path/again/:id',
-      data: (req, res) => { // You can also pass a function which behaves as a normal express callback for an endpoint.
+      // You can also pass a function which behaves as a normal express callback for an endpoint.
+      data: (req, res) => {
         res.json({ test: req.params.id });
       },
-    },
+      delay: {  // number or { min: number, max: number } - default: 0 - unit: ms
+        min: 500,
+        max: 2000
+      }
+    }, {
+      path: '/something',
+      data: { test: 'something' },
+      errorRate: 0.5, // 0 - 1
+      errorResponse: { // { status: number, body: anything } - default: { status: 500, body: { error: 'error' } }
+        status: 500, // number - default: 500
+        body: { // body - default: { error: 'error' }
+          error: 'Error!'
+        }
+      },
+    }
   ],
   defaultHeaders: [
     {

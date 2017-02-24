@@ -22,14 +22,14 @@ testApi.init({
           test: req.params.id
         })
       },
-      errorRate: .5,
+      errorRate: 0,
       errorResponse: {
         status: 503,
         body: { error: 'Service Unavailable' }
       },
       delay: {
         min: 0,
-        max: 5000,
+        max: 5,
       }
     }
   ]

@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 const errorDefault = { status: 500, body: { error: 'error' } };
 const defaultResponseFn = data => (req, res) => {
   res.status(200)
@@ -66,6 +67,7 @@ const api = {
   },
   init(config) {
     this.server = express();
+    this.server.user(bodyParser.json())
     this.addEndpoints(config);
   },
   start(port = 3001) {

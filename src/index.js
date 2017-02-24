@@ -67,7 +67,7 @@ const api = {
   },
   init(config) {
     this.server = express();
-    this.server.user(bodyParser.json())
+    this.server.use(bodyParser.json())
     this.addEndpoints(config);
   },
   start(port = 3001) {
